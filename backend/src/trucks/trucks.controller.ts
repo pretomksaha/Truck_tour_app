@@ -8,7 +8,7 @@ export class TrucksController {
         
 
         @Post()
-        addTruck(
+        async addTruck(
             @Body('id') truckId: string,
             @Body('date') truckDate: string,
             @Body('number_plate') truckPlate: string,
@@ -16,8 +16,7 @@ export class TrucksController {
             @Body('oil_capacity') truckCapacity: number,
             @Body('oil_price') truckPrice: number,
         ) {
-            const generatedID = this.trucksService.insertTruck(
-                truckId,
+            const generatedID = await this.trucksService.insertTruck(
                 truckDate,
                 truckPlate,
                 truckOil,
@@ -29,17 +28,18 @@ export class TrucksController {
     }
 
     @Get()
-    getAllTrucks(){
-        return this.trucksService.getTrucks();
+    async getAllTrucks(){
+        const trucks= await this.trucksService.getTrucks();
+        return trucks;
     }
 
     @Get(':id')
-    getTruck(@Param('id') truckId: string,){
+    getTruck(@Param('id') truckId: string){
         return this.trucksService.getSingleTruck(truckId);
     }
 
     @Patch(':id')
-    updateTruck(
+    async updateTruck(
         @Param('id') truckId: string,
         @Body('date') truckDate: string,
         @Body('number_plate') truckPlate: string,
@@ -47,7 +47,7 @@ export class TrucksController {
         @Body('oil_capacity') truckCapacity: number,
         @Body('oil_price') truckPrice: number,){
 
-            this.trucksService.updateTruck(
+            await this.trucksService.updateTruck(
                 truckId,
                 truckDate,
                 truckPlate,
@@ -59,8 +59,8 @@ export class TrucksController {
     }
 
     @Delete(':id')
-    removeTruck(@Param('id') truckId: string,){
-        this.trucksService.deleteTruck(truckId);
+    async removeTruck(@Param('id') truckId: string,){
+        await this.trucksService.deleteTruck(truckId);
         return null;
     }
 }
