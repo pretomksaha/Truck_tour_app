@@ -24,14 +24,14 @@ export class TrucksService {
             oil_price,
         });
         const result= await newTruck.save();
-        return result.id as string;
+        return null;
     }
 
     async getTrucks(){
         const trucks = await this.truckModel.find().exec();
         return trucks.map( trk=> ({
             id: trk.id,
-            data: trk.date,
+            date: trk.date,
             number_plate: trk.number_plate,
             oil_type: trk.oil_type,
             oil_capacity: trk.oil_capacity,
@@ -39,8 +39,8 @@ export class TrucksService {
         }));
     }
 
-    async getSingleTruck(truckID: string){
-        const truck = await this.findtruck(truckID);
+    async getSingleTruck(truckNP: string){
+        const truck = await this.findtruck(truckNP);
         return truck;
     }
 
@@ -75,10 +75,10 @@ export class TrucksService {
         };
     }
 
-    private async findtruck(id: string): Promise<Truck> {
+    private async findtruck(number_plate: string): Promise<Truck> {
         let truck;
         try{
-           truck = await this.truckModel.findById(id).exec();
+           truck = await this.truckModel.find({number_plate: number_plate}).exec();
         } catch(error){
             throw new NotFoundException('could not Found');
         }

@@ -1,5 +1,4 @@
-import { Body, Controller, Get, Post, Param, Patch, Delete, Redirect, Res } from "@nestjs/common";
-import { response } from "express";
+import { Body, Controller, Get, Post, Param, Patch, Delete } from "@nestjs/common";
 
 import {TrucksService} from './trucks.service';
 
@@ -9,39 +8,38 @@ export class TrucksController {
         
 
         @Post()
-        @Redirect('trucks')
-        async addTruck(
+        addTruck(
             @Body('id') truckId: string,
-            @Body('number_plate') truckPlate: string,
             @Body('date') truckDate: string,
+            @Body('number_plate') truckPlate: string,
             @Body('oil_type') truckOil: string,
             @Body('oil_capacity') truckCapacity: number,
             @Body('oil_price') truckPrice: number,
         ) {
-            const generatedID = await this.trucksService.insertTruck(
+            const generatedID = this.trucksService.insertTruck(
+                truckId,
                 truckDate,
                 truckPlate,
                 truckOil,
                 truckCapacity,
                 truckPrice,
                 );
-                return Redirect();
+                return {trucksid:generatedID};
         
     }
 
     @Get()
-    async getAllTrucks(){
-        const trucks= await this.trucksService.getTrucks();
-        return trucks;
+    getAllTrucks(){
+        return this.trucksService.getTrucks();
     }
 
-    @Get(':SearchItem')
-    getTruck(@Param('SearchItem') truckNP: string){
-        return this.trucksService.getSingleTruck(truckNP);
+    @Get(':id')
+    getTruck(@Param('id') truckId: string,){
+        return this.trucksService.getSingleTruck(truckId);
     }
 
     @Patch(':id')
-    async updateTruck(
+    updateTruck(
         @Param('id') truckId: string,
         @Body('date') truckDate: string,
         @Body('number_plate') truckPlate: string,
@@ -49,7 +47,7 @@ export class TrucksController {
         @Body('oil_capacity') truckCapacity: number,
         @Body('oil_price') truckPrice: number,){
 
-            await this.trucksService.updateTruck(
+            this.trucksService.updateTruck(
                 truckId,
                 truckDate,
                 truckPlate,
@@ -61,8 +59,8 @@ export class TrucksController {
     }
 
     @Delete(':id')
-    async removeTruck(@Param('id') truckId: string,){
-        await this.trucksService.deleteTruck(truckId);
+    removeTruck(@Param('id') truckId: string,){
+        this.trucksService.deleteTruck(truckId);
         return null;
     }
 }

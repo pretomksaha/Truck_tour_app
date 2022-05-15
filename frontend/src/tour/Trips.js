@@ -1,42 +1,29 @@
-import React, { useState, useEffect } from "react";
-import './Home.css';
-import axios from 'axios';
-import { useLocation } from "react-router-dom";
+import React from "react";
+import '../components/Home.css'
 
+function Trips() {
+    const users = [
+        {
+            date:"10.05.2022",
+            number_plate:"DA01PS043",
+            oil_type:"diesel",
+            oil_capacity:"25",
+            oil_price:"1.96"
+        },
+        {
+            date:"10.05.2022",
+            number_plate:"DA01PS043",
+            oil_type:"diesel",
+            oil_capacity:"25",
+            oil_price:"1.96"
+        },
+      ];
 
-function useQuery() {
-    const { search } = useLocation();
-  
-    return React.useMemo(() => new URLSearchParams(search), [search]);
-  }
-
-function Home() {
-    const [data, setData] = useState([]);
-    const query = useQuery();;
-    const searchData=query.get("SearchItem");
-    let getLink=process.env.REACT_APP_BACKEND_ACCESS;
-    
-    if (searchData==null){
-        getLink=getLink;
-    }
-    else{
-        getLink=getLink+'/'+searchData;
-    }
-
-    useEffect(() => {
-        const fatchData = async () =>{ 
-            const result = await axios(getLink);
-            setData(result.data);
-          }
-
-          fatchData();
-        },[])
-    
     return(
         <div class="container">
             <div class="text-center mb-1">
-                <h1>Truck Fleet</h1>
-                <p class="lead">List of all available Trucks information</p>
+                <h1>Truck Tours</h1>
+                <p class="lead">List of all available Truck Tours</p>
             </div>
 
             <div class="card1 mb-3">
@@ -60,7 +47,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            { data.map(item => (
+            { users.map(item => (
                 <div class="card1 mb-3">
                     <div class="card1-body">
                         <div class="d-flex flex-column flex-lg-row">
@@ -74,7 +61,7 @@ function Home() {
                                         <td>{item.oil_type}</td>
                                         <td>{item.oil_capacity}</td>
                                         <td>{item.oil_price}</td>
-                                        <td> <div class="btn-group"><a class="btn btn-warning" href="/update" type="submit">Edit</a>
+                                        <td> <div class="btn-group"><a class="btn btn-warning" href="/reschedule" type="submit">Edit</a>
                                         <a class="btn btn-danger" href="/delete" type="submit">Remove</a></div>
                                         </td>
                                     </tr>
@@ -90,4 +77,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Trips;
