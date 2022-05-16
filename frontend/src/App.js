@@ -8,6 +8,7 @@ import Update from './components/Update';
 import Organize from './tour/Organize';
 import Reschedule from './tour/Reschedule';
 import Trips from './tour/Trips';
+import Delete from './components/Delete';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         <Routes>
             <Route path="/trucks" element={<Home/>} />
             <Route path="/Create" element={<Create/>} />
-            <Route path="/update" element={<Update/>} />
+            <Route path="/trucks/update" element={<Update/>} />
+            <Route path="/trucks/delete" element={<Delete/>} />
             <Route path="/organize" element={<Organize/>} />
             <Route path="/reschedule" element={<Reschedule/>} />
             <Route path="/trips" element={<Trips/>} />

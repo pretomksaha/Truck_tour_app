@@ -39,9 +39,28 @@ export class TrucksService {
         }));
     }
 
-    async getSingleTruck(truckNP: string){
-        const truck = await this.findtruck(truckNP);
-        return truck;
+    async getFindTruck(truckNP: string){
+        const trucks = await this.truckModel.find({number_plate: truckNP}).exec();
+        return trucks.map( trk=> ({
+            id: trk.id,
+            date: trk.date,
+            number_plate: trk.number_plate,
+            oil_type: trk.oil_type,
+            oil_capacity: trk.oil_capacity,
+            oil_price: trk.oil_price, 
+        }));;
+    }
+
+    async getSingleTruck(truckID: string){
+        const truck = await this.findsingletruck(truckID);
+        return {
+            id: truck.id,
+            date: truck.date,
+            number_plate: truck.number_plate,
+            oil_type: truck.oil_type,
+            oil_capacity: truck.oil_capacity,
+            oil_price: truck.oil_price, 
+        };
     }
 
     async updateTruck(
@@ -51,10 +70,13 @@ export class TrucksService {
         oil_type: string, 
         oil_capacity: number, 
         oil_price: number){
-            const updatedTruck= await this.findtruck(truckID)
+            const updatedTruck= await this.findsingletruck(truckID)
             if(number_plate){
                 updatedTruck.number_plate= number_plate;
-            }          
+            }     
+            if(date){
+                updatedTruck.date= date;
+            }      
             if(oil_type){
                 updatedTruck.oil_type= oil_type;
             }
@@ -75,10 +97,10 @@ export class TrucksService {
         };
     }
 
-    private async findtruck(number_plate: string): Promise<Truck> {
+    private async findsingletruck(truckID: string): Promise<Truck> {
         let truck;
         try{
-           truck = await this.truckModel.find({number_plate: number_plate}).exec();
+           truck = await this.truckModel.findOne({_id:truckID}).exec();
         } catch(error){
             throw new NotFoundException('could not Found');
         }

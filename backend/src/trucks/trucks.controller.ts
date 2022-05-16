@@ -37,18 +37,24 @@ export class TrucksController {
 
     @Get(':SearchItem')
     getTruck(@Param('SearchItem') truckNP: string){
-        return this.trucksService.getSingleTruck(truckNP);
+        return this.trucksService.getFindTruck(truckNP);
     }
 
-    @Patch(':id')
+    @Get('update/:id')
+    getOneTruck(@Param('id') truckId: string){
+        return this.trucksService.getSingleTruck(truckId);
+    }
+
+    @Post('update')
+    @Redirect('../')
     async updateTruck(
-        @Param('id') truckId: string,
+        @Body('id') truckId: string,
         @Body('date') truckDate: string,
         @Body('number_plate') truckPlate: string,
         @Body('oil_type') truckOil: string,
         @Body('oil_capacity') truckCapacity: number,
         @Body('oil_price') truckPrice: number,){
-
+            
             await this.trucksService.updateTruck(
                 truckId,
                 truckDate,
@@ -60,7 +66,7 @@ export class TrucksController {
             return null;
     }
 
-    @Delete(':id')
+    @Delete('delete/:id')
     async removeTruck(@Param('id') truckId: string,){
         await this.trucksService.deleteTruck(truckId);
         return null;

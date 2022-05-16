@@ -12,7 +12,7 @@ function useQuery() {
 
 function Home() {
     const [data, setData] = useState([]);
-    const query = useQuery();;
+    const query = useQuery();
     const searchData=query.get("SearchItem");
     let getLink=process.env.REACT_APP_BACKEND_ACCESS;
     
@@ -41,20 +41,22 @@ function Home() {
 
             <div class="card1 mb-3">
                     <div class="card1-body">
-                        <div class="d-flex flex-column flex-lg-row">
-                        <div class="col-sm-3 py-5">
-                                <span class="badge bg-success">Truck Number Plate</span>
+                        <div class="d-flex flex-row flex-lg-row">
+                                <div class="d-flex align-items-start py-5">
+                                    <span class="badge bg-success">Truck Number Plate</span>
                                 </div>
-                            <div class="row flex-fill">
+                            <div class="d-flex align-items-center py-3">
                                 <table>
                                     <tr>
-                                        <th>Entry Date</th>
-                                        <th>Fual Type</th>
-                                        <th>Fual Tank Capacity</th>
-                                        <th>Fual Price</th>
-                                        <th> Action</th>
+                                        <td>Entry Date</td>
+                                        <td>Fual Type</td>
+                                        <td>Fual Tank Capacity</td>
+                                        <td>Fual Price</td>
                                     </tr>
                                 </table>
+                                <div class="d-flex align-items-end py-3">
+                                        <span>Action</span>
+                                </div>
                             </div>
             
                         </div>
@@ -64,21 +66,28 @@ function Home() {
                 <div class="card1 mb-3">
                     <div class="card1-body">
                         <div class="d-flex flex-column flex-lg-row">
-                        <div class="col-sm-3 py-5">
-                                <span class="badge bg-success">{item.number_plate}</span>
+                                <div class="d-flex align-items-start py-5">
+                                        <span class="badge bg-success">{item.number_plate}</span>
                                 </div>
-                            <div class="row flex-fill">
-                            <table>
-                                    <tr>
-                                        <td>{item.date}</td>
-                                        <td>{item.oil_type}</td>
-                                        <td>{item.oil_capacity}</td>
-                                        <td>{item.oil_price}</td>
-                                        <td> <div class="btn-group"><a class="btn btn-warning" href="/update" type="submit">Edit</a>
-                                        <a class="btn btn-danger" href="/delete" type="submit">Remove</a></div>
-                                        </td>
-                                    </tr>
-                                </table>
+
+                                <div class="d-flex align-items-center py-3">
+                                        <table>
+                                                <tr>
+                                                    <td>{item.date}</td>
+                                                    <td>{item.oil_type}</td>
+                                                    <td>{item.oil_capacity}</td>
+                                                    <td>{item.oil_price}</td>
+
+                                                </tr>
+                                            </table>
+                                <div class="d-flex align-items-end py-3">
+                                <span>
+                                    <div class="btn-group">
+                                        <a class="btn btn-warning" href={"../trucks/update/?id="+item.id} type="submit">Edit</a>
+                                        <a class="btn btn-danger" href={"../trucks/delete/?id="+item.id} type="submit">Remove</a>
+                                    </div>
+                                        </span>
+                                </div>
 
                             </div>
             
