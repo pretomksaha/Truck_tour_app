@@ -1,5 +1,5 @@
-import { Body, Controller, Get, Post, Param, Patch, Delete, Redirect, Res } from "@nestjs/common";
-import { response } from "express";
+import { Body, Controller, Get, Post, Param, Patch, Delete, Redirect } from "@nestjs/common";
+
 
 import {TrucksService} from './trucks.service';
 
