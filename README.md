@@ -44,7 +44,7 @@
 
 The projects is to Create a demo plateform for stakeholder Jeff a way to track tour fuel costs for the trucking fleet. The frontend is developed uisng React js and the backend is developed uisng Nest js.
 
-# Criteria:
+### Criteria:
 
 * There should be a page to enter a new truck which is identified by the plate number. It must have a property to enter its fuel price per liter.
 * An overview page "Truck fleet" should exist to list all available trucks which are entered into the system
