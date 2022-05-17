@@ -31,25 +31,27 @@ export class TripsService {
 
     async getTrips(){
         const trips = await this.tripModel.find().exec();
-        return trips.map( trk=> ({
-            id: trk.id,
-            trip_id: trk.trip_id,
-            number_plate: trk.number_plate,
-            start_date: trk.start_date,
-            end_date: trk.end_date,
-            distance: trk.distance, 
+        return trips.map( trip => ({
+            id: trip.id,
+            trip_id: trip.trip_id,
+            number_plate: trip.number_plate,
+            start_date: trip.start_date,
+            end_date: trip.end_date,
+            distance: trip.distance,
+            total_cost: trip.total_cost, 
         }));
     }
 
     async getFindTrip(tripNP: string){
         const trips = await this.tripModel.find({number_plate: tripNP}).exec();
-        return trips.map( trk=> ({
-            id: trk.id,
-            trip_id: trk.trip_id,
-            number_plate: trk.number_plate,
-            start_date: trk.start_date,
-            end_date: trk.end_date,
-            distance: trk.distance, 
+        return trips.map( trip => ({
+            id: trip.id,
+            trip_id: trip.trip_id,
+            number_plate: trip.number_plate,
+            start_date: trip.start_date,
+            end_date: trip.end_date,
+            distance: trip.distance,
+            total_cost: trip.total_cost,  
         }));;
     }
 
@@ -61,7 +63,8 @@ export class TripsService {
             number_plate: trip.number_plate,
             start_date: trip.start_date,
             end_date: trip.end_date,
-            distance: trip.distance, 
+            distance: trip.distance,
+            total_cost: trip.total_cost,  
         };
     }
 
@@ -73,12 +76,14 @@ export class TripsService {
         distance: number, 
         total_cost: number){
             const updatedTrip= await this.findsingletrip(trip_id)
+            let date= start_date.split('-');
+            let newdate=date.join('');
             if(number_plate){
-                updatedTrip.trip_id=trip_id;
+                updatedTrip.trip_id=newdate+number_plate;
                 updatedTrip.number_plate= number_plate;
             }     
             if(start_date){
-                updatedTrip.trip_id=trip_id;
+                updatedTrip.trip_id=newdate+number_plate;
                 updatedTrip.start_date= start_date;
             }      
             if(end_date){

@@ -5,10 +5,11 @@ import {Routes, Route} from 'react-router-dom';
 import Create from './components/Create';
 import Home from './components/Home';
 import Update from './components/Update';
-import Organize from './tour/Organize';
-import Reschedule from './tour/Reschedule';
-import Trips from './tour/Trips';
+import Organize from './trip/Organize';
+import Reschedule from './trip/Reschedule';
+import Trips from './trip/Trips';
 import Delete from './components/Delete';
+import Remove from './trip/Remove';
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
             <Route path="/Create" element={<Create/>} />
             <Route path="/trucks/update" element={<Update/>} />
             <Route path="/trucks/delete" element={<Delete/>} />
-            <Route path="/organize" element={<Organize/>} />
-            <Route path="/reschedule" element={<Reschedule/>} />
             <Route path="/trips" element={<Trips/>} />
+            <Route path="/organize" element={<Organize/>} />
+            <Route path="/trips/update" element={<Reschedule/>} />
+            <Route path="/trips/delete" element={<Remove/>} />
 
           </Routes>     
         </header>

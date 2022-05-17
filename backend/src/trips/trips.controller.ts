@@ -9,15 +9,18 @@ export class TripsController {
         
 
         @Post()
-        @Redirect('trips')
+        @Redirect('trucks')
         async addTrip(
             @Body('id') tripId: string,
             @Body('number_plate') truckPlate: string,
             @Body('start_date') startDate: string,
             @Body('end_date') endDate: string,
             @Body('distance') distance: number,
-            @Body('totalCost') totalCost: number,
+            @Body('total_cost') totalCost: number,
         ) {
+            let date= startDate.split('-');
+            let newdate=date.join('');
+            tripId = newdate+truckPlate;
             const generatedID = await this.tripsService.insertTrip(
                 tripId,
                 truckPlate,
@@ -49,13 +52,12 @@ export class TripsController {
     @Post('update')
     @Redirect('../')
     async updateTrip(
-        @Body('id') tripId: string,
+            @Body('id') tripId: string,
             @Body('number_plate') truckPlate: string,
             @Body('start_date') startDate: string,
             @Body('end_date') endDate: string,
             @Body('distance') distance: number,
-            @Body('totalCost') totalCost: number,){
-            
+            @Body('total_cost') totalCost: number,){
             await this.tripsService.updateTrip(
                 tripId,
                 truckPlate,

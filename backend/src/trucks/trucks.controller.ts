@@ -54,7 +54,6 @@ export class TrucksController {
         @Body('oil_type') truckOil: string,
         @Body('oil_capacity') truckCapacity: number,
         @Body('oil_price') truckPrice: number,){
-            
             await this.trucksService.updateTruck(
                 truckId,
                 truckDate,

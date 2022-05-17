@@ -5,12 +5,11 @@ import './Create.css';
 function Create() {
   return (
     <div class="container">
-    <div class='mainLR'>
-        
-                <div class="page-wrapper font-poppins">
-                    <div class="wrapper .wrapper--w960">
-                        <div class="card-3">
-                            <div class="card-heading">
+        <div class='mainLR'>
+                    <div class="page-wrapper font-poppins">
+                        <div class="wrapper .wrapper--w960">
+                            <div class="card-3">
+                                <div class="card-heading">
                             </div>
                             <div class="card-body">
                             <h2 class="title">Truck Info</h2>
@@ -28,11 +27,11 @@ function Create() {
                                     </div>
 
                                     <div class="input-group">
-                                        <input class="input--style-3" type="number" placeholder="Oil Capacity of Truck" name="oil_capacity"/>
+                                        <input class="input--style-3" type="number" placeholder="Oil Capacity of Truck" step="0.01" name="oil_capacity"/>
                                     </div>
                                     
                                     <div class="input-group">
-                                        <input class="input--style-3" type="number" placeholder="Oil Price per Liter" name="oil_price"/>
+                                        <input class="input--style-3" type="number" placeholder="Oil Price per Liter" step="0.01" name="oil_price"/>
                                     </div>
                                     
                                     <div class="p-t-10">

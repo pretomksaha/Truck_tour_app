@@ -14,8 +14,7 @@ function Home() {
     const [data, setData] = useState([]);
     const query = useQuery();
     const searchData=query.get("SearchItem");
-    let getLink=process.env.REACT_APP_BACKEND_ACCESS;
-    
+    let getLink=process.env.REACT_APP_BACKEND_ACCESS_TRUCKS;
     if (searchData==null){
         getLink=getLink;
     }

@@ -16,7 +16,7 @@ function Update() {
     const query = useQuery();
     const searchID=query.get("id");
     const fatchData = async () =>{ 
-        const result = await axios(process.env.REACT_APP_BACKEND_ACCESS+'/update/'+searchID);
+        const result = await axios(process.env.REACT_APP_BACKEND_ACCESS_TRUCKS+'/update/'+searchID);
         setData(result.data);  
     }
           fatchData();
@@ -31,8 +31,8 @@ function Update() {
                             </div>
                             <div class="card-body">
                             <h2 class="title">Update Truck Info</h2>
-                                <form method="Post">
-                                    <input class="input--style-3" type="hidden"  name="id" value={data._id}/>
+                                <form method="Post" action=".">
+                                    <input class="input--style-3" type="hidden"  name="id" value={data.id}/>
                                     <div class="input-group">
                                         <input class="input--style-3" type="text" placeholder={data.number_plate} name="number_plate" />
                                     </div>
