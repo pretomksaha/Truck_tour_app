@@ -1,0 +1,289 @@
+
+  /* ==========================================================================
+     #SPACING
+     ========================================================================== */
+  .p-t-20 {
+    padding-top: 20px;
+  }
+  .p-t-10 {
+    padding-top: 10px;
+  }
+  .p-b-20 {
+    padding-bottom: 20px;
+  }
+/* ==========================================================================
+   #WRAPPER
+   ========================================================================== */
+   .wrapper {
+    margin: 0 auto;
+  }
+   .wrapper--w960 {
+    max-width: 960px;
+  }
+
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+   input {
+    outline: none;
+    margin: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  
+  .input-icon {
+    position: absolute;
+    font-size: 18px;
+    color: #ccc;
+    right: 8px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 33px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .input--style-3 {
+    padding: 5px 0;
+    font-size: 16px;
+    color: #ccc;
+    background: transparent;
+  }
+  
+  .input--style-3::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #ccc;
+  }
+  
+  .input--style-3:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
+    color: #ccc;
+    opacity: 1;
+  }
+  
+  .input--style-3::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
+    color: #ccc;
+    opacity: 1;
+  }
+  
+  .input--style-3:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: #ccc;
+  }
+  
+  .input--style-3:-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: #ccc;
+  }
+  .input--style-3::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+label {
+  float: left;
+}
+  
+  
+  /* ==========================================================================
+   #TITLE
+   ========================================================================== */
+.title {
+    font-size: 24px;
+    color: rgb(247, 10, 10);
+    font-weight: 400;
+    margin-bottom: 36px;
+  }
+  
+  /* ==========================================================================
+     #CARD
+     ========================================================================== */
+  .card {
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  .card-3 {
+    background: rgba(0, 0, 0, 0);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    display: table;
+  }
+  
+  .card-3 .card-heading {
+    background: url("./image/truckwalpaper.jpg") top left/cover no-repeat;
+    display: table-cell;
+    width: 50%;
+  }
+  .card-3 .card-heading-organize {
+    background: url("./image/road.jpg") top left/cover no-repeat;
+    display: table-cell;
+    width: 50%;
+  }
+  .card-3 .card-heading-updated {
+    background: url("./image/update.jpg") top left/cover no-repeat;
+    display: table-cell;
+    width: 50%;
+  }
+  .card-3 .card-heading-reschedule {
+    background: url("./image/under.jpg") top left/cover no-repeat;
+    display: table-cell;
+    width: 50%;
+  }
+  
+  .card-3 .card-body {
+    padding: 57px 65px;
+    padding-bottom: 65px;
+    display: table-cell;
+  }
+  
+
+  /* ==========================================================================
+   #PAGE WRAPPER
+   ========================================================================== */
+.page-wrapper {
+    min-height: 100vh;
+  }
+  .font-poppins {
+    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  }
+  
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+  
+  h2 {
+    font-size: 30px;
+  }
+  
+  h3 {
+    font-size: 24px;
+  }
+  
+  h4 {
+    font-size: 18px;
+  }
+  
+  h5 {
+    font-size: 15px;
+  }
+  
+  h6 {
+    font-size: 13px;
+  }
+/* ==========================================================================
+   #DATE PICKER
+   ========================================================================== */
+   td.active {
+    background-color: #2c6ed5;
+  }
+  
+  input[type="date" i] {
+    padding: 14px;
+  }
+  
+  /* ==========================================================================
+     #Left
+     ========================================================================== */
+.mainLR{
+    padding-top: 20px;
+    width: 80%;
+    min-height: 100vh;
+}
+
+
+/* ==========================================================================
+   #BUTTON
+   ========================================================================== */
+
+  
+  .btn--radius {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+  
+  .btn--pill {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+  }
+  
+  .btn--green {
+    background: #67b758;
+  }
+  
+  .btn--green:hover {
+    background: #4dae3c;
+  }
+  
+/* ==========================================================================
+   #Option
+   ========================================================================== */
+option{
+  background-color:  rgba(255, 255, 255);
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+}
+select{
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ccc;
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   #Calender
+   ========================================================================== */
+/* hide the html5 date picker spin arrows */
+.form-control[type=date]::-webkit-inner-spin-button, 
+.form-control[type=date]::-webkit-clear-button,
+.form-control[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.form-control[type=date]::-webkit-calendar-picker-indicator {
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.z-index-1 {
+    position: relative;
+    z-index: -1;
+}
+
+/* hide the blue outline */
+.form-control:focus {
+    outline: 0 !important;
+    border-color: initial;
+    box-shadow: none;
+}

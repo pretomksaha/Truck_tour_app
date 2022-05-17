@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
+import Create from './components/Create';
+import Home from './components/Home';
+import Update from './components/Update';
+import Organize from './trip/Organize';
+import Reschedule from './trip/Reschedule';
+import Trips from './trip/Trips';
+import Delete from './components/Delete';
+import Remove from './trip/Remove';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+      <Nav />
+        <header className="App-header">
+        <Routes>
+            <Route path="/trucks" element={<Home/>} />
+            <Route path="/Create" element={<Create/>} />
+            <Route path="/trucks/update" element={<Update/>} />
+            <Route path="/trucks/delete" element={<Delete/>} />
+            <Route path="/trips" element={<Trips/>} />
+            <Route path="/organize" element={<Organize/>} />
+            <Route path="/trips/update" element={<Reschedule/>} />
+            <Route path="/trips/delete" element={<Remove/>} />
+
+          </Routes>     
+        </header>
+      </div>
+    </Router>
   );
 }
 
