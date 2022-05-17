@@ -3,6 +3,7 @@ import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { Trip } from './trip.model';
 
+// Service methods for Truck Tour (CRUD)
 @Injectable()
 export class TripsService {
     trips: Trip[] = [];
@@ -14,7 +15,8 @@ export class TripsService {
         number_plate: string, 
         start_date: string,
         end_date: string, 
-        distance: number, 
+        distance: number,
+        liter_price: number, 
         total_cost: number
         ) {
         const newTrip= new this.tripModel({
@@ -23,6 +25,7 @@ export class TripsService {
             start_date,
             end_date,
             distance,
+            liter_price,
             total_cost,
         });
         const result= await newTrip.save();
@@ -38,6 +41,7 @@ export class TripsService {
             start_date: trip.start_date,
             end_date: trip.end_date,
             distance: trip.distance,
+            liter_price:trip.liter_price,
             total_cost: trip.total_cost, 
         }));
     }
@@ -51,6 +55,7 @@ export class TripsService {
             start_date: trip.start_date,
             end_date: trip.end_date,
             distance: trip.distance,
+            liter_price:trip.liter_price,
             total_cost: trip.total_cost,  
         }));;
     }
@@ -64,6 +69,7 @@ export class TripsService {
             start_date: trip.start_date,
             end_date: trip.end_date,
             distance: trip.distance,
+            liter_price: trip.liter_price,
             total_cost: trip.total_cost,  
         };
     }
@@ -73,7 +79,8 @@ export class TripsService {
         number_plate: string, 
         start_date: string,
         end_date: string, 
-        distance: number, 
+        distance: number,
+        liter_price: number, 
         total_cost: number){
             const updatedTrip= await this.findsingletrip(trip_id)
             let date= start_date.split('-');
@@ -81,6 +88,7 @@ export class TripsService {
             if(number_plate){
                 updatedTrip.trip_id=newdate+number_plate;
                 updatedTrip.number_plate= number_plate;
+                updatedTrip.liter_price = liter_price;
             }     
             if(start_date){
                 updatedTrip.trip_id=newdate+number_plate;

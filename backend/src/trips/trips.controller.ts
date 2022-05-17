@@ -16,6 +16,7 @@ export class TripsController {
             @Body('start_date') startDate: string,
             @Body('end_date') endDate: string,
             @Body('distance') distance: number,
+            @Body('liter_price') liter_price: number,
             @Body('total_cost') totalCost: number,
         ) {
             let date= startDate.split('-');
@@ -27,6 +28,7 @@ export class TripsController {
                 startDate,
                 endDate,
                 distance,
+                liter_price,
                 totalCost,
                 );
                 return Redirect();
@@ -57,6 +59,7 @@ export class TripsController {
             @Body('start_date') startDate: string,
             @Body('end_date') endDate: string,
             @Body('distance') distance: number,
+            @Body('liter_price') liter_price: number,
             @Body('total_cost') totalCost: number,){
             await this.tripsService.updateTrip(
                 tripId,
@@ -64,6 +67,7 @@ export class TripsController {
                 startDate,
                 endDate,
                 distance,
+                liter_price,
                 totalCost,
             );
             return null;
