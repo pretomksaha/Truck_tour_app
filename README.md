@@ -3,9 +3,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
   <h3 align="center">Truck Tour App</h3>
 
@@ -44,9 +41,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-<div align="center">
-<img src="images/moviesApp.png" alt="Screnshot" width="500" height="300">
-</div>
+
 The projects is to Create a demo plateform for stakeholder Jeff a way to track tour fuel costs for the trucking fleet. The frontend is developed uisng React js and the backend is developed uisng Nest js.
 
 # Criteria:
