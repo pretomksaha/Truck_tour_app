@@ -7,7 +7,7 @@
   <h3 align="center">Truck Tour App</h3>
 
   <p align="center">
-    The goal of this project is to create a web portal for users to take tracking on the truck's trip and their expenses. The task is given by CHI Deutschland Cargo Handling GmbH as a test project for  Full Stack Software Developer possition.
+    The goal of this project is to create a web portal for users to take tracking on the truck's trip and their expenses. The task is given by CHI Deutschland Cargo Handling GmbH as a test project for the Full Stack Software Developer position.
   </p>
 </div>
 
@@ -42,7 +42,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The projects is to Create a demo plateform for stakeholder Jeff a way to track tour fuel costs for the trucking fleet. The frontend is developed uisng React js and the backend is developed uisng Nest js.
+The project is to Create a demo platform for stakeholder Jeff as a way to track tour fuel costs for the trucking fleet. The frontend is developed using React js and the backend is developed using Nest js.
 
 ### Criteria:
 
@@ -59,7 +59,7 @@ The projects is to Create a demo plateform for stakeholder Jeff a way to track t
 
 ### Built With
 
-This section have the list of frameworks/libraries used to bootstrap the project.
+This section has the list of frameworks/libraries used to bootstrap the project.
 
 * [Nest.js](https://nestjs.com/)
 * [React.js](https://reactjs.org/)
@@ -86,7 +86,7 @@ The app is running in two different the frontend on port 3000 and for backend po
   ```sh
   npm run dev
   ```
-Or to run the backend and frontend separetely the following command need to use.
+Or to run the backend and frontend separately the following command need to use.
  * /backend location
   ```sh
   cd backend
@@ -107,7 +107,7 @@ Or to run the backend and frontend separetely the following command need to use.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-In the frontend has two major feature an overview page "Truck fleet" and an overview page "Truck tours". 
+In the frontend has two major features an overview page "Truck fleet" and an overview page "Truck tours". 
 
 * Truck fleet
 <div align="center">
@@ -120,12 +120,12 @@ In the frontend has two major feature an overview page "Truck fleet" and an over
 <img src="image/trucktour.png" alt="Screnshot" width="400" height="220">
 </div>
 
-For "Truck fleet" page user can input information like Truck Numbet plate, date of input, type of fuel, fuel capacity and fuel price.
+For "Truck fleet" page user can input information like the Truck number plate, date of input, type of fuel, fuel capacity , and fuel price.
 <div align="center">
 <img src="image/create.png" alt="Screnshot" width="400" height="220">
 </div>
 
-Depending on the "Truck fleet" user can generate the "Truck tours" with the information about the start and end date, Truck number plate, distance and also get the cost accurding with the trip information.
+Depending on the "Truck fleet" the user can generate the "Truck tours" with the information about the start and end date, Truck number plate, and distance and also get the cost according to the trip information..
 
 <div align="center">
 <img src="image/organize.png" alt="Screnshot" width="400" height="220">
@@ -139,12 +139,12 @@ Depending on the "Truck fleet" user can generate the "Truck tours" with the info
 <!-- approaches -->
 ## Approaches
 
-To develop the project the following approches that I follow.
+To develop the project the following approaches that I follow.
 
-1. Creating the backend and frontend for intial project using nest js and racet js.
-2. Develping the backend for CRUD methods.
-3. Connecting the backend with database mongodb.
-4. Desinging the frontend in react JS.
+1. Creating the backend and frontend for the intial project using nest js and racet js.
+2. Developing the backend for CRUD methods.
+3. Connecting the backend with database MongoDB.
+4. Designing the frontend in react JS.
 5. Connecting the frontend and backend.
-6. Fixing the buggs and issues.
-7. Add required documentaions.
+6. Fixing the bugs and issues.
+7. Add required documentations.
