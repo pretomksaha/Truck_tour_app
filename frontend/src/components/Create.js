@@ -1,7 +1,7 @@
 import React from "react";
 import './Create.css';
 
-
+// Entry form for truck Info
 function Create() {
   return (
     <div class="container">
@@ -11,8 +11,9 @@ function Create() {
                             <div class="card-3">
                                 <div class="card-heading">
                             </div>
+                            
                             <div class="card-body">
-                            <h2 class="title">Truck Info</h2>
+                                <h2 class="title">Add New Truck Info</h2>
                                 <form method="POST" action="/trucks">
                                     <div class="input-group">
                                         <input class="input--style-3" type="text" placeholder="Truk Plate Number" name="number_plate"/>
@@ -23,15 +24,15 @@ function Create() {
                                     </div>
 
                                     <div class="input-group">
-                                        <input class="input--style-3" type="text" placeholder="Type of Oil" name="oil_type"/>
+                                        <input class="input--style-3" type="text" placeholder="Type of Fuel" name="oil_type"/>
                                     </div>
 
                                     <div class="input-group">
-                                        <input class="input--style-3" type="number" placeholder="Oil Capacity of Truck" step="0.01" name="oil_capacity"/>
+                                        <input class="input--style-3" type="number" placeholder="Fuel Capacity of Truck" step="0.01" name="oil_capacity"/>
                                     </div>
                                     
                                     <div class="input-group">
-                                        <input class="input--style-3" type="number" placeholder="Oil Price per Liter" step="0.01" name="oil_price"/>
+                                        <input class="input--style-3" type="number" placeholder="Fuel Price per Liter" step="0.01" name="oil_price"/>
                                     </div>
                                     
                                     <div class="p-t-10">
