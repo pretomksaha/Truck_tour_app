@@ -26,7 +26,7 @@ export class TrucksService {
             oil_price,
         });
         const result= await newTruck.save();
-        return null;
+        return  result;
     }
 
     // Get all Truck information from database.
@@ -92,7 +92,7 @@ export class TrucksService {
             if(oil_price){
                 updatedTruck.oil_price= oil_price;
             }
-            updatedTruck.save();
+            return updatedTruck.save();
             
     }
 

@@ -29,7 +29,7 @@ export class TripsService {
             total_cost,
         });
         const result= await newTrip.save();
-        return null;
+        return result;
     }
 
     async getTrips(){
@@ -103,7 +103,7 @@ export class TripsService {
             if(total_cost){
                 updatedTrip.total_cost= total_cost;
             }
-            updatedTrip.save();  
+            return updatedTrip.save();  
     }
 
     async deleteTrip(tripID: string){

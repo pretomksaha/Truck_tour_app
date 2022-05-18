@@ -31,7 +31,7 @@ export class TripsController {
                 liter_price,
                 totalCost,
                 );
-                return Redirect();
+                return generatedID;
         
     }
 
@@ -61,7 +61,8 @@ export class TripsController {
             @Body('distance') distance: number,
             @Body('liter_price') liter_price: number,
             @Body('total_cost') totalCost: number,){
-            await this.tripsService.updateTrip(
+            
+            return await this.tripsService.updateTrip(
                 tripId,
                 truckPlate,
                 startDate,
@@ -69,8 +70,7 @@ export class TripsController {
                 distance,
                 liter_price,
                 totalCost,
-            );
-            return null;
+            );;
     }
 
     @Delete('delete/:id')

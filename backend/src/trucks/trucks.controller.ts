@@ -25,7 +25,7 @@ export class TrucksController {
                 truckCapacity,
                 truckPrice,
                 );
-                return Redirect();
+                return generatedID;
         
     }
 
@@ -62,7 +62,14 @@ export class TrucksController {
                 truckCapacity,
                 truckPrice,
             );
-            return null;
+            return await this.trucksService.updateTruck(
+                truckId,
+                truckDate,
+                truckPlate,
+                truckOil,
+                truckCapacity,
+                truckPrice,
+            );
     }
 
     @Delete('delete/:id')
