@@ -1,6 +1,7 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { TripsService } from "./trips.service";
 
+// unittest for Trips Services
 describe('TripsService',()=>{
     let service: TripsService;
 
@@ -18,6 +19,7 @@ describe('TripsService',()=>{
         service = module.get<TripsService>(TripsService);
     });
 
+    // test case to check service defind
     it('should be define', ()=> {
         expect(service).toBeDefined();
     });

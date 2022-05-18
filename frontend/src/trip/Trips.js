@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import '../components/Home.css';
 import axios from 'axios';
-import { useLocation } from "react-router-dom";
 
+// An overview page 'Truck Tour'
 function Trips() {
     const [trips, setTrips] = useState([]);
 
     let getLink=process.env.REACT_APP_BACKEND_ACCESS_TRIPS;
     console.log(getLink)
+    
+    // use Effect on page load to get data from backend
     useEffect(() => {
         const fatchData = async () =>{ 
             const result = await axios(getLink);
@@ -17,7 +19,6 @@ function Trips() {
           fatchData();
         },[])
     
-
     return(
         <div class="container">
             <div class="text-center mb-1">

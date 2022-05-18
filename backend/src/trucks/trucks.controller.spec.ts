@@ -2,6 +2,7 @@
 import { TrucksController } from "./trucks.controller";
 import { TrucksService } from "./trucks.service";
 
+// unittest for Truck Controller
 describe('TrucksControLLer',()=>{
     let controller: TrucksController;
 
@@ -28,6 +29,7 @@ describe('TrucksControLLer',()=>{
         controller = module.get<TrucksController>(TrucksController);
     });
 
+    // test case to check cotroller defind
     it('should be define', ()=> {
         expect(controller).toBeDefined();
     });

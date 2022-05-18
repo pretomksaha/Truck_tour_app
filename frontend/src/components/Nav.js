@@ -2,10 +2,12 @@ import React,{useState} from 'react';
 import {Link,useNavigate} from 'react-router-dom';
 
 
-// Navigation for Home and Search
+// Navigation for "Track Fleet", Create, "Truck Tour" and Organized
 function Nav(){
     const setSearch = useState('');
     const navigate = useNavigate();
+
+    //  Navigation to "Track Fleet"
     const onNavigatorHome = () => {       
         navigate("/trucks/");
     }
@@ -19,9 +21,9 @@ function Nav(){
             <div id="navMainMenu" class="navbar-collapse collapse">
                 <div class="navbar-nav ml-auto">
                     <Link to='/trucks' className="nav-item nav-link active">Truck fleet</Link>
-                    <Link to='/create' className="nav-item nav-link">Create</Link>
-                    <Link to='/trips' className="nav-item nav-link">Truck tours</Link>
-                    <Link to='/organize' className="nav-item nav-link">Organize</Link>
+                    <Link to='/create' className="nav-item nav-link">New Truck</Link>
+                    <Link to='/trips' className="nav-item nav-link">Truck Tours</Link>
+                    <Link to='/organize' className="nav-item nav-link">Organize New Tours</Link>
                 </div>
             </div>
             <form class="d-flex">

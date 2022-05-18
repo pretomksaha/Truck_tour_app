@@ -3,13 +3,14 @@ import './Home.css';
 import axios from 'axios';
 import { useLocation } from "react-router-dom";
 
-
+// Function to get the query id from url
 function useQuery() {
     const { search } = useLocation();
   
     return React.useMemo(() => new URLSearchParams(search), [search]);
   }
 
+// An overview page 'Truck Fleet' 
 function Home() {
     const [data, setData] = useState([]);
     const query = useQuery();
@@ -22,6 +23,7 @@ function Home() {
         getLink=getLink+'/'+searchData;
     }
 
+    // use Effect on page load to get data from backend
     useEffect(() => {
         const fatchData = async () =>{ 
             const result = await axios(getLink);
@@ -61,7 +63,8 @@ function Home() {
                         </div>
                     </div>
                 </div>
-            { data.map(item => (
+            { //Map every truck from database
+            data.map(item => (
                 <div class="card1 mb-3">
                     <div class="card1-body">
                         <div class="d-flex flex-column flex-lg-row">
