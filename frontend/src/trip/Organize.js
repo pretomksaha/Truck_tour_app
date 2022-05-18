@@ -39,6 +39,7 @@ function Organize() {
                                     </div>
                                     <form method="POST" action="/trips">
                                     <input type="hidden"  value={truckNumber} name="number_plate"/> 
+                                    
                                     <div class="input-group"> 
                                         <label class="input--style-3" >Start Date:</label>                  
                                         <input class="input--style-3 bg-transparent py-2" type="date" id="start-date" name="start_date"/>                                                      
@@ -52,7 +53,7 @@ function Organize() {
                                     <div class="input-group">
                                         <input onChange={(e)=>setDistance(e.target.value)} class="input--style-3" type="number" placeholder="Distence in kilometer" step="0.01" name="distance"/>
                                     </div>
-                                    
+                                    <input type="hidden"  value={fuelPrice} name="liter_price"/> 
                                     <div class="input-group">
                                         <input class="input--style-3" type="number" placeholder="Total Price of Foul in Euro" name="total_cost" step="0.01" value={price}/>
                                     </div>

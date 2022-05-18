@@ -6,6 +6,7 @@ export const TripSchema= new mongoose.Schema({
         start_date: {type: String, required:true},
         end_date: {type: String, required:true},
         distance: {type: Number, required:true},
+        liter_price: {type: Number, required:true},
         total_cost: {type: Number, required:true},
 
     }
@@ -18,5 +19,6 @@ export interface Trip extends mongoose.Document {
         start_date: string;
         end_date: string;
         distance: number;
+        liter_price: number;
         total_cost: number
 }

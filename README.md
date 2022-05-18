@@ -141,7 +141,7 @@ Depending on the "Truck fleet" the user can generate the "Truck tours" with the 
 
 To develop the project the following approaches that I follow.
 
-1. Creating the backend and frontend for the intial project using nest js and racet js.
+1. Creating the backend and frontend for the intial project using nest js and react js.
 2. Developing the backend for CRUD methods.
 3. Connecting the backend with database MongoDB.
 4. Designing the frontend in react JS.

@@ -3,12 +3,14 @@ import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { Truck } from './truck.model';
 
+// Service methods for Truck (CRUD)
 @Injectable()
 export class TrucksService {
     trucks: Truck[] = [];
 
     constructor(@InjectModel('Truck') private readonly truckModel: Model<Truck>){}
 
+    // Insert new data in Truck data collection.
     async insertTruck(
         date:string,
         number_plate: string, 
@@ -24,9 +26,10 @@ export class TrucksService {
             oil_price,
         });
         const result= await newTruck.save();
-        return null;
+        return  result;
     }
 
+    // Get all Truck information from database.
     async getTrucks(){
         const trucks = await this.truckModel.find().exec();
         return trucks.map( trk=> ({
@@ -39,6 +42,7 @@ export class TrucksService {
         }));
     }
 
+    // Find spacific Truck information using truck number plate 
     async getFindTruck(truckNP: string){
         const trucks = await this.truckModel.find({number_plate: truckNP}).exec();
         return trucks.map( trk=> ({
@@ -51,6 +55,7 @@ export class TrucksService {
         }));;
     }
 
+    // Find spacific Truck information using database input id. 
     async getSingleTruck(truckID: string){
         const truck = await this.findsingletruck(truckID);
         return {
@@ -63,6 +68,7 @@ export class TrucksService {
         };
     }
 
+    // Update the existing data for specific truck.
     async updateTruck(
         truckID: string,
         date:string,
@@ -86,10 +92,11 @@ export class TrucksService {
             if(oil_price){
                 updatedTruck.oil_price= oil_price;
             }
-            updatedTruck.save();
+            return updatedTruck.save();
             
     }
 
+    // Delete informtion from database.
     async deleteTruck(truckID: string){
         const result= await this.truckModel.deleteOne({_id: truckID}).exec();
         if(result.deletedCount===0){
@@ -97,6 +104,7 @@ export class TrucksService {
         };
     }
 
+    // Find methods for single truck information via _id
     private async findsingletruck(truckID: string): Promise<Truck> {
         let truck;
         try{

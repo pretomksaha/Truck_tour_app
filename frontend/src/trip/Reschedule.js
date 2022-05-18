@@ -10,15 +10,22 @@ function useQuery() {
   }
 
 function Reschedule() {
+    const query = useQuery();
+    const searchID=query.get("id");
     const [trip, setTrips] = useState([]);
     const [truckList, setData] = useState([]);
     const [index, setIndex] = useState('');
-    const [distance, setDistance] = useState('');
+    let [distance, setDistance] = useState('');
     let truckNumber=index.split(',')[1];
     let fuelPrice = index.split(',')[0];
-    let price= parseFloat(fuelPrice)*parseFloat(distance)*10;
-    const query = useQuery();
-    const searchID=query.get("id");
+    if(fuelPrice == ''){
+        fuelPrice = trip.liter_price;
+    }
+    if (distance ==''){
+        distance=trip.distance;
+    }
+    let price = (parseFloat(fuelPrice)*parseFloat(distance))/10;
+
     useEffect(() => {
     const fatchData = async () =>{ 
         const truckResult = await axios(process.env.REACT_APP_BACKEND_ACCESS_TRUCKS);
@@ -63,8 +70,8 @@ function Reschedule() {
                                 <div class="input-group">
                                     <input onChange={(e)=>setDistance(e.target.value)} class="input--style-3" type="number" placeholder={trip.distance} step="0.01" name="distance"/>
                                 </div>
-                                
-                                <div class="input-group">
+                                <input type="hidden"  name="liter_price"/> 
+                                <div class="input-group">                               
                                     <input class="input--style-3" type="number" placeholder={trip.total_cost} name="total_cost" step="0.01" value={price}/>
                                 </div>
                                 
