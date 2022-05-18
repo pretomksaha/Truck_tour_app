@@ -4,7 +4,7 @@
 <br />
 <div align="center">
 
-  <h3 align="center">Truck Tour App</h3>
+  <h1 align="center">Truck Tour App</h1>
 
   <p align="center">
     The goal of this project is to create a web portal for users to take tracking on the truck's trip and their expenses. The task is given by CHI Deutschland Cargo Handling GmbH as a test project for the Full Stack Software Developer position.
@@ -31,7 +31,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#approaches">Approaches</a></li>
 
   </ol>
