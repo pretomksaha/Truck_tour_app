@@ -2,12 +2,12 @@ import { Test, TestingModule } from "@nestjs/testing";
 import { TripsController } from "./trips.controller";
 import { TripsService } from "./trips.service";
 
-describe('TripsControLLer',()=>{
+// unittest for Trips Controller
+describe('TripsController',()=>{
     let controller: TripsController;
 
     const mockTripsService = {
         
-
     }
 
     beforeEach(async () => {
@@ -22,6 +22,7 @@ describe('TripsControLLer',()=>{
         controller = module.get<TripsController>(TripsController);
     });
 
+    // test case to check cotroller defind
     it('should be define', ()=> {
         expect(controller).toBeDefined();
     });

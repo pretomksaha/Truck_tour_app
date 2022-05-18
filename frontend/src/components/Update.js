@@ -3,14 +3,14 @@ import './Create.css';
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
 
-
+// Function to get the query id from url
 function useQuery() {
     const { search } = useLocation();
   
     return React.useMemo(() => new URLSearchParams(search), [search]);
   }
 
-
+// An update form for Truck Info
 function Update() {
     const [data, setData] = useState([]);
     const query = useQuery();

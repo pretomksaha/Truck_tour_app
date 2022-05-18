@@ -2,14 +2,16 @@ import React,{ useState, useEffect } from "react";
 import '../components/Create.css';
 import axios from 'axios';
 
-
+// Add a new Truck Tour Information 
 function Organize() {
     const [truckList, setData] = useState([]);
     const [index, setIndex] = useState('');
     const [distance, setDistance] = useState('');
     let truckNumber=index.split(',')[1];
     let fuelPrice = index.split(',')[0];
-    let price= (parseFloat(fuelPrice)*parseFloat(distance))/10;
+    let price= (parseFloat(fuelPrice)*parseFloat(distance))/10; // total cost = (per liter price* distance)/ 10
+    
+    // use Effect on page load to get data from backend
     useEffect(() => {
         const fatchData = async () =>{ 
             const result = await axios(process.env.REACT_APP_BACKEND_ACCESS_TRUCKS);

@@ -3,12 +3,14 @@ import '../components/Create.css';
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
 
+// Function to get the query id from url
 function useQuery() {
     const { search } = useLocation();
   
     return React.useMemo(() => new URLSearchParams(search), [search]);
   }
 
+// update existing Truck tour 
 function Reschedule() {
     const query = useQuery();
     const searchID=query.get("id");
@@ -24,8 +26,9 @@ function Reschedule() {
     if (distance ==''){
         distance=trip.distance;
     }
-    let price = (parseFloat(fuelPrice)*parseFloat(distance))/10;
+    let price = (parseFloat(fuelPrice)*parseFloat(distance))/10; // total cost = (per liter price* distance)/ 10
 
+    // use Effect on page load to get data from backend
     useEffect(() => {
     const fatchData = async () =>{ 
         const truckResult = await axios(process.env.REACT_APP_BACKEND_ACCESS_TRUCKS);

@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 
+// create a new model schema for truck tour
 export const TripSchema= new mongoose.Schema({
         trip_id: {type: String, required:true, index: true, unique: true},
         number_plate: {type: String, required:true},

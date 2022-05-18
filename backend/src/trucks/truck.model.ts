@@ -1,5 +1,6 @@
 import * as mongoose from 'mongoose';
 
+// create a new model schema for truck information and fuel price
 export const TruckSchema= new mongoose.Schema({
         date: {type: String, required:true},
         number_plate: {type: String, required:true},

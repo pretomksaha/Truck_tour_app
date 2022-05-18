@@ -10,6 +10,7 @@ export class TripsService {
 
     constructor(@InjectModel('Trip') private readonly tripModel: Model<Trip>){}
 
+    // create and save new Trip info
     async insertTrip(
         trip_id:string,
         number_plate: string, 
@@ -32,6 +33,7 @@ export class TripsService {
         return result;
     }
 
+    // get all available Trip info
     async getTrips(){
         const trips = await this.tripModel.find().exec();
         return trips.map( trip => ({
@@ -46,6 +48,7 @@ export class TripsService {
         }));
     }
 
+    // find the spacific trip info for a Number Plate
     async getFindTrip(tripNP: string){
         const trips = await this.tripModel.find({number_plate: tripNP}).exec();
         return trips.map( trip => ({
@@ -60,6 +63,7 @@ export class TripsService {
         }));;
     }
 
+    // find single trip info of ID
     async getSingleTrip(tripID: string){
         const trip = await this.findsingletrip(tripID);
         return {
@@ -73,7 +77,8 @@ export class TripsService {
             total_cost: trip.total_cost,  
         };
     }
-
+    
+    // Update existing infromation for Trip
     async updateTrip(
         trip_id:string,
         number_plate: string, 
@@ -106,6 +111,7 @@ export class TripsService {
             return updatedTrip.save();  
     }
 
+    // Delete the trip from data table 
     async deleteTrip(tripID: string){
         const result= await this.tripModel.deleteOne({_id: tripID}).exec();
         if(result.deletedCount===0){
@@ -113,6 +119,7 @@ export class TripsService {
         };
     }
 
+    // function for handle find methods
     private async findsingletrip(tripID: string): Promise<Trip> {
         let trip;
         try{
