@@ -124,7 +124,8 @@ For "Truck fleet" page user can input information like the Truck number plate, d
 <img src="image/create.png" alt="Screnshot" width="400" height="220">
 </div>
 
-Depending on the "Truck fleet" the user can generate the "Truck tours" with the information about the start and end date, Truck number plate, and distance and also get the cost according to the trip information..
+Depending on the "Truck fleet" the user can generate the "Truck tours" with the information about the start and end date, Truck number plate, and distance and get the cost according to the trip information.The cost is calculated by fuel price per liter *
+distance and divide by average fuel per liter.
 
 <div align="center">
 <img src="image/organize.png" alt="Screnshot" width="400" height="220">
