@@ -57,7 +57,7 @@ function Organize() {
                                     </div>
                                     <input type="hidden"  value={fuelPrice} name="liter_price"/> 
                                     <div class="input-group">
-                                        <input class="input--style-3" type="number" placeholder="Total Price of Foul in Euro" name="total_cost" step="0.01" value={price}/>
+                                        <input class="input--style-3" type="number" placeholder="Total Price of Fuel in Euro" name="total_cost" step="0.01" value={price}/>
                                     </div>
                                     
                                     <div class="p-t-10">

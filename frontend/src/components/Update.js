@@ -47,11 +47,11 @@ function Update() {
                                     </div>
 
                                     <div class="input-group">
-                                        <input class="input--style-3" type="number" placeholder={data.oil_capacity} name="oil_capacity" />
+                                        <input class="input--style-3" type="number" placeholder={data.oil_capacity} step="0.01" name="oil_capacity" />
                                     </div>
                                     
                                     <div class="input-group">
-                                        <input class="input--style-3" type="number" placeholder={data.oil_price} name="oil_price" />
+                                        <input class="input--style-3" type="number" placeholder={data.oil_price} step="0.01" name="oil_price" />
                                     </div>
                                     
                                     <div class="p-t-10">
