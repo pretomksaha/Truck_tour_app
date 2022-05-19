@@ -50,9 +50,9 @@ function Home() {
                                 <table>
                                     <tr>
                                         <td>Entry Date</td>
-                                        <td>Fual Type</td>
-                                        <td>Fual Tank Capacity</td>
-                                        <td>Fual Price</td>
+                                        <td>Fuel Type</td>
+                                        <td>Fuel Tank Capacity</td>
+                                        <td>Fuel Price</td>
                                     </tr>
                                 </table>
                                 <div class="d-flex align-items-end py-3">
